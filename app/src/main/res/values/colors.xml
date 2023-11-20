@@ -1,5 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+
+    <!--Black scale-->
+    <color name="black">#000000</color>
+    <color name="black_opacity_80">#CC000000</color>
+    <color name="black_opacity_20">#33000000</color>
+
+    <!--    Gray scale-->
+    <color name="gray_8">#3B3B3B</color>
+    <color name="gray_7">#484848</color>
+    <color name="gray_6">#555555</color>
+    <color name="gray_5">#828282</color>
+    <color name="gray_4">#A4A4A4</color>
+    <color name="gray_3">#CCCCCC</color>
+    <color name="gray_2">#DADADA</color>
+    <color name="gray_1">#F1F1F1</color>
+    <color name="gray_opacity_80">#99B9C0C9</color>
+
+    <!--    white scale-->
+    <color name="white">#FFFFFF</color>
+    <!--BlueGray scale-->
+    <color name="blue_gray_6">#3C3F45</color>
+    <color name="blue_gray_5">#757F8B</color>
+    <color name="blue_gray_4">#C9D1DC</color>
+    <color name="blue_gray_3">#E6EAF0</color>
+    <color name="blue_gray_2">#F0F0F3</color>
+    <color name="blue_gray_1">#F9F9FB</color>
+    <!--    blue scale-->
+    <color name="sub_blue">#0D65B3</color>
+    <color name="blue">#0385FF</color>
+
+    <!--    green scale-->
+    <color name="sub_green">#49A34B</color>
+    <color name="green">#66C056</color>
+    <color name="never_green">#03C75A</color>
+
+    <!--    khaki scale-->
+    <color name="sub_khaki">#595E22</color>
+    <color name="khaki">#6A7128</color>
+
+    <!--    orange scale-->
+    <color name="orange">#F56652</color>
+    <!--    red scale-->
+    <color name="red">#F61024</color>
+    <!--    review scale-->
+    <color name="review_1">#1DA4B2</color>
+    <color name="review_2">#A1E0D8</color>
+    <color name="review_3">#C5E9E6</color>
+    <color name="review_4">#9EDBB9</color>
+    <color name="review_5">#E7FFF1</color>
+
+
 </resources>
