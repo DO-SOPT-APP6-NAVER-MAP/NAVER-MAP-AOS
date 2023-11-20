@@ -113,13 +113,13 @@
     <style name="Typography.NaverMap.ButtonCaption1">
         <item name="fontFamily">@font/naver_map_pretendard_bold</item>
         <item name="android:textSize">12sp</item>
-        <item name="android:lineHeight">15px</item>
+        <item name="android:lineHeight">15sp</item>
     </style>
 
     <style name="Typography.NaverMap.ButtonCaption2">
         <item name="fontFamily">@font/naver_map_pretendard_semi_bold</item>
         <item name="android:textSize">12sp</item>
-        <item name="android:lineHeight">15px</item>
+        <item name="android:lineHeight">15sp</item>
     </style>
 
     <style name="Typography.NaverMap.ButtonCaption3">
