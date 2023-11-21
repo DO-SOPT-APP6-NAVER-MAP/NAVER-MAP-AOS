@@ -160,6 +160,92 @@
                     app:layout_constraintBottom_toBottomOf="@id/tv_detail_star"
                     app:layout_constraintStart_toEndOf="@id/tv_detail_visitor_review"
                     app:layout_constraintTop_toTopOf="@id/tv_detail_star" />
+
+                <LinearLayout
+                    android:id="@+id/ll_detail_route"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_detail_visitor_review">
+
+                    <ImageView
+                        android:id="@+id/iv_detail_depart"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="6dp"
+                        android:src="@drawable/ic_detail_depart" />
+
+                    <ImageView
+                        android:id="@+id/iv_detail_arrive"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_detail_arrive" />
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/v_detail_line1"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/blue_gray_2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ll_detail_route" />
+
+                <LinearLayout
+                    android:id="@+id/ll_detail_quick_bar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/v_detail_line1">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/iv_detail_phone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="13dp"
+                            android:src="@drawable/ic_detail_phone"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_detail_phone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="전화"
+                            android:theme="@style/Typography.NaverMap.Body10"
+                            android:layout_marginTop="6dp"
+                            android:layout_marginBottom="10dp"
+                            app:layout_constraintTop_toBottomOf="@id/iv_detail_phone"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
+
+                        <View
+                            android:id="@+id/v_detail_line3"
+                            android:layout_width="1dp"
+                            android:layout_height="0dp"
+                            android:background="@color/blue_gray_2"
+                            android:layout_marginTop="9dp"
+                            android:layout_marginBottom="16dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <com.google.android.material.appbar.MaterialToolbar
