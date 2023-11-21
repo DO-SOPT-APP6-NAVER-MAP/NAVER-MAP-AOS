@@ -1,0 +1,20 @@
+<!-- drawable/frame_18826.xml -->
+<vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="262dp"
+    android:height="40dp"
+    android:viewportWidth="262"
+    android:viewportHeight="40"
+    >
+    <group>
+        <clip-path
+            android:pathData="M10 0H252C257.523 0 262 4.47715 262 10V30C262 35.5228 257.523 40 252 40H10C4.47715 40 0 35.5228 0 30V10C0 4.47715 4.47715 0 10 0Z"
+            />
+        <path
+            android:pathData="M10 0H252C257.523 0 262 4.47715 262 10V30C262 35.5228 257.523 40 252 40H10C4.47715 40 0 35.5228 0 30V10C0 4.47715 4.47715 0 10 0Z"
+            android:strokeWidth="2"
+            android:strokeColor="@color/gray_2"
+            />
+    </group>
+</vector>
