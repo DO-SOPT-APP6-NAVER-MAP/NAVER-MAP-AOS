@@ -20,6 +20,7 @@
         android:layout_height="59dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_main_top_bar"
+        android:background="@drawable/img_main_activity_shadow"
         >
 
         <ImageView
