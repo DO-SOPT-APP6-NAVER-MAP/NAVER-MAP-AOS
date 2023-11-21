@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">NaverMap</string>
+    <string name="main_search_instructor">검색어를 입력해주세요.</string>
 </resources>
