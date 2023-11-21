@@ -18,6 +18,185 @@
             app:contentScrim="@android:color/transparent"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white">
+
+                <ImageView
+                    android:id="@+id/iv_detail_img1"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:padding="1dp"
+                    android:src="@drawable/ic_launcher_background"
+                    app:layout_constraintDimensionRatio="1"
+                    app:layout_constraintEnd_toStartOf="@id/iv_detail_img2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintWidth_percent="0.5" />
+
+                <ImageView
+                    android:id="@+id/iv_detail_img2"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:padding="1dp"
+                    android:src="@drawable/ic_launcher_background"
+                    app:layout_constraintDimensionRatio="1"
+                    app:layout_constraintEnd_toStartOf="@id/iv_detail_img3"
+                    app:layout_constraintStart_toEndOf="@id/iv_detail_img1"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintWidth_percent="0.25" />
+
+                <ImageView
+                    android:id="@+id/iv_detail_img3"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:padding="1dp"
+                    android:src="@drawable/ic_launcher_background"
+                    app:layout_constraintDimensionRatio="1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/iv_detail_img2"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintWidth_percent="0.25" />
+
+                <ImageView
+                    android:id="@+id/iv_detail_img4"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:padding="1dp"
+                    android:src="@drawable/ic_launcher_background"
+                    app:layout_constraintDimensionRatio="1"
+                    app:layout_constraintEnd_toStartOf="@id/iv_detail_img5"
+                    app:layout_constraintStart_toStartOf="@id/iv_detail_img2"
+                    app:layout_constraintTop_toBottomOf="@id/iv_detail_img2"
+                    app:layout_constraintWidth_percent="0.25" />
+
+                <ImageView
+                    android:id="@+id/iv_detail_img5"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:padding="1dp"
+                    android:src="@drawable/ic_launcher_background"
+                    app:layout_constraintDimensionRatio="1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/iv_detail_img4"
+                    app:layout_constraintTop_toBottomOf="@id/iv_detail_img3"
+                    app:layout_constraintWidth_percent="0.25" />
+
+                <TextView
+                    android:id="@+id/tv_detail_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="20dp"
+                    android:text="알고"
+                    android:theme="@style/Typography.NaverMap.Title2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/iv_detail_img1" />
+
+                <TextView
+                    android:id="@+id/tv_detail_subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="스파게티, 파스타전문"
+                    android:textColor="@color/gray_4"
+                    android:theme="@style/Typography.NaverMap.Body5"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_detail_title"
+                    app:layout_constraintStart_toEndOf="@id/tv_detail_title"
+                    app:layout_constraintTop_toTopOf="@id/tv_detail_title" />
+
+                <TextView
+                    android:id="@+id/tv_detail_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="수제맥주를 즐길 수 있는 어린이대공원 파스타 맛집"
+                    android:theme="@style/Typography.NaverMap.Body5"
+                    app:layout_constraintStart_toStartOf="@id/tv_detail_title"
+                    app:layout_constraintTop_toBottomOf="@id/tv_detail_title" />
+
+                <ImageView
+                    android:id="@+id/iv_detail_star"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_detail_star"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_detail_star"
+                    app:layout_constraintStart_toStartOf="@id/tv_detail_description"
+                    app:layout_constraintTop_toTopOf="@id/tv_detail_star" />
+
+                <TextView
+                    android:id="@+id/tv_detail_star"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:text="4.82"
+                    android:theme="@style/Typography.NaverMap.Body5"
+                    app:layout_constraintStart_toEndOf="@id/iv_detail_star"
+                    app:layout_constraintTop_toBottomOf="@id/tv_detail_description" />
+
+                <TextView
+                    android:id="@+id/tv_detail_visitor_review"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:background="@drawable/shape_green_fill_3_rectangle"
+                    android:padding="4dp"
+                    android:text="방문자리뷰 288"
+                    android:theme="@style/Typography.NaverMap.Body5"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_detail_star"
+                    app:layout_constraintStart_toEndOf="@id/tv_detail_star"
+                    app:layout_constraintTop_toTopOf="@id/tv_detail_star" />
+
+                <TextView
+                    android:id="@+id/tv_detail_blog_review"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:background="@drawable/shape_green_fill_3_rectangle"
+                    android:padding="4dp"
+                    android:text="블로그리뷰 316"
+                    android:theme="@style/Typography.NaverMap.Body5"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_detail_star"
+                    app:layout_constraintStart_toEndOf="@id/tv_detail_visitor_review"
+                    app:layout_constraintTop_toTopOf="@id/tv_detail_star" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/tb_detail_title"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@color/white"
+                app:layout_collapseMode="pin"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_scrollFlags="enterAlways">
+
+                <ImageView
+                    android:id="@+id/iv_detail_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    app:tint="@color/white"
+                    android:src="@drawable/ic_detail_back" />
+
+                <TextView
+                    android:id="@+id/tv_detail_main"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:text="알고"
+                    android:theme="@style/Typography.NaverMap.Title2" />
+
+                <ImageView
+                    android:id="@+id/iv_detail_close"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="16dp"
+                    app:tint="@color/white"
+                    android:src="@drawable/ic_detail_close" />
+
+            </com.google.android.material.appbar.MaterialToolbar>
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
         <com.google.android.material.tabs.TabLayout
