@@ -5,15 +5,36 @@ import org.sopt.dosopttemplate.util.binding.DataBindingActivity
 import org.sopt.navermap.R
 import org.sopt.navermap.databinding.ActivityTestSearchBinding
 
-class TestSearchActivity: DataBindingActivity<ActivityTestSearchBinding>(R.layout.activity_test_search) {
+class TestSearchActivity :
+    DataBindingActivity<ActivityTestSearchBinding>(R.layout.activity_test_search) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val currentFragment = supportFragmentManager.findFragmentById(R.id.fcv_search_test)
+
+        initSearchView()
+
+    }
+
+    private fun initSearchView() {
+        makeMapView()
+        makeBottomSheet()
+    }
+
+    private fun makeMapView() {
+        val currentFragment = supportFragmentManager.findFragmentById(R.id.fcv_search_map)
         if (currentFragment == null) {
             supportFragmentManager.beginTransaction()
-                .add(R.id.fcv_search_test, SearchResultFragment())
+                .add(R.id.fcv_search_map, SearchMapFragment())
+                .commit()
+        }
+    }
+
+    private fun makeBottomSheet() {
+        val currentBottomFragment = supportFragmentManager.findFragmentById(R.id.fcv_search_bottom)
+        if (currentBottomFragment == null) {
+            supportFragmentManager.beginTransaction()
+                .add(R.id.fcv_search_bottom, SearchBottomFragment())
                 .commit()
         }
     }
