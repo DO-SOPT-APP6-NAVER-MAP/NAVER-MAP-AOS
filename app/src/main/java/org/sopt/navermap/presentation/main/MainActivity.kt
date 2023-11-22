@@ -1,7 +1,7 @@
 package org.sopt.navermap.presentation.main
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import org.sopt.navermap.R
 
 class MainActivity : AppCompatActivity() {

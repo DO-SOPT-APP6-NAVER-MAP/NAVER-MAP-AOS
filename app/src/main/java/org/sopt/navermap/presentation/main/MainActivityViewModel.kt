@@ -1,4 +1,6 @@
 package org.sopt.navermap.presentation.main
 
-class MainActivityViewModel {
+import androidx.lifecycle.ViewModel
+
+class MainActivityViewModel: ViewModel() {
 }
