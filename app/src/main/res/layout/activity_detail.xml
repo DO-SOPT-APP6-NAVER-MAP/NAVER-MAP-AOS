@@ -1377,6 +1377,85 @@
                         app:layout_constraintTop_toBottomOf="@id/tv_detail_visitor_review1_date"
                         app:layout_constraintBottom_toBottomOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_detail_visitor_review2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/cl_detail_visitor_review1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" >
+                    <TextView
+                        android:id="@+id/tv_detail_visitor_review2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="로제 파스타 꾸덕하고 찐해서 진짜 맛있었어요! 봉골레도 간이 잘 돼서 맛있게 먹고왔어요!ㅎㅎ"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginStart="17dp"
+                        android:layout_marginEnd="22dp"
+                        android:lineHeight="18dp"
+                        android:theme="@style/Typography.NaverMap.Body10"
+                        android:minLines="3"
+                        android:maxLines="3"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/iv_detail_visitor_review2"/>
+
+                    <ImageView
+                        android:id="@+id/iv_detail_visitor_review2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="17dp"
+                        android:src="@drawable/img_detail_menu3"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintWidth_percent="0.22"/>
+
+                    <ImageView
+                        android:id="@+id/iv_detail_visitor_review2_profile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_detail_profile"
+                        android:background="@drawable/shape_white_fill_round"
+                        android:layout_marginTop="23dp"
+                        android:elevation="5dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_detail_visitor_review2"
+                        app:layout_constraintStart_toStartOf="@id/tv_detail_visitor_review2"/>
+
+                    <TextView
+                        android:id="@+id/tv_detail_visitor_review2_profile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:theme="@style/Typography.NaverMap.Body12"
+                        android:text="또또288"
+                        android:layout_marginStart="7dp"
+                        android:layout_marginBottom="2dp"
+                        app:layout_constraintStart_toEndOf="@id/iv_detail_visitor_review2_profile"
+                        app:layout_constraintTop_toTopOf="@id/iv_detail_visitor_review2_profile"
+                        app:layout_constraintBottom_toTopOf="@id/tv_detail_visitor_review2_date"/>
+
+                    <TextView
+                        android:id="@+id/tv_detail_visitor_review2_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="10.22.일  영수증  1번째 방문"
+                        android:textColor="@color/gray_4"
+                        android:theme="@style/Typography.NaverMap.Body12"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginStart="7dp"
+                        app:layout_constraintStart_toEndOf="@id/iv_detail_visitor_review2_profile"
+                        app:layout_constraintBottom_toBottomOf="@id/iv_detail_visitor_review2_profile"
+                        app:layout_constraintTop_toBottomOf="@id/tv_detail_visitor_review2_profile" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/blue_gray_2"
+                        android:layout_marginTop="13dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_detail_visitor_review2_date"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
