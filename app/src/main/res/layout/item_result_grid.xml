@@ -1,0 +1,18 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cl_main_search_result_grid_bar"
+    android:layout_width="160dp"
+    android:layout_height="40dp"
+    android:clipToOutline="true"
+    android:background="@drawable/ic_main_activity_search_fragment_grid_bar"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/cl_main_search_result_grid_bar"
+        app:layout_constraintBottom_toBottomOf="@id/cl_main_search_result_grid_bar"
+        app:layout_constraintStart_toStartOf="@id/cl_main_search_result_grid_bar"
+        app:layout_constraintEnd_toEndOf="@id/cl_main_search_result_grid_bar"
+        android:text="TMP: grid recycler view"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
