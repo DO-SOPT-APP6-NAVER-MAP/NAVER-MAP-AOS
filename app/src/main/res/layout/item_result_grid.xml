@@ -15,7 +15,8 @@
     android:clipToOutline="true"
     android:background="@drawable/ic_main_search_grid_bar"
     >   
-    <androidx.constraintlayout.utils.widget.ImageFilterView
+    <ImageView
+        android:id="@+id/iv_main_search_search_glass"
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:src="@drawable/ic_main_search_gray"
@@ -34,8 +35,9 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="@id/cl_main_search_result_grid_bar"
         app:layout_constraintBottom_toBottomOf="@id/cl_main_search_result_grid_bar"
-        app:layout_constraintStart_toStartOf="@id/cl_main_search_result_grid_bar"
-        app:layout_constraintEnd_toEndOf="@id/cl_main_search_result_grid_bar"
-        android:text="TMP: grid recycler view"/>
+        app:layout_constraintStart_toEndOf="@id/iv_main_search_search_glass"
+        android:layout_marginStart="4dp"
+        android:text="알고"
+        android:textAppearance="@style/Typography.NaverMap.Body5"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
