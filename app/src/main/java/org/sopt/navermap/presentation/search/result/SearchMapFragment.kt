@@ -46,6 +46,7 @@ class SearchMapFragment :
 
     private fun initUISetting() {
         val uiSetting = naverMap.uiSettings
+        uiSetting.logoGravity = LOGO_GRAVITY
         uiSetting.isZoomControlEnabled = false
         uiSetting.isScaleBarEnabled = false
     }
@@ -62,6 +63,7 @@ class SearchMapFragment :
     }
 
     companion object {
+        const val LOGO_GRAVITY = 0
         const val LOCATION_CAPTION = "알고"
         const val CAMERA_ZOOM = 16.0
     }
