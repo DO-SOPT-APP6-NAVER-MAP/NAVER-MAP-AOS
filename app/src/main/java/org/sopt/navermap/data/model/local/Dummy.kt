@@ -15,6 +15,7 @@ data class LocationRaw(
     val category: String,
     val review: Int
 )
+
 data class Location(
     val id: Int,
     val nameEntered: String,

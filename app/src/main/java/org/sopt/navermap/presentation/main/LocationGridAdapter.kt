@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import org.sopt.navermap.data.model.local.Location
 import org.sopt.navermap.databinding.ItemResultGridBinding
-import org.sopt.navermap.databinding.ItemResultListBinding
 
 class LocationGridAdapter(context: Context) : RecyclerView.Adapter<LocationGridViewHolder>() {
     private val inflater by lazy { LayoutInflater.from(context) }
