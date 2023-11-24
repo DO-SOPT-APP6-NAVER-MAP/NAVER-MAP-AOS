@@ -52,10 +52,10 @@
         android:layout_marginStart="12dp"
         />
     <TextView
-        android:id="@+id/tv_main_search_review"
+        android:id="@+id/tv_main_search_review_string"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="리뷰 12"
+        android:text="리뷰"
         android:textColor="@color/gray_5"
         android:textAppearance="@style/Typography.NaverMap.Body10"
         app:layout_constraintTop_toBottomOf="@id/tv_main_search_address"
@@ -63,6 +63,18 @@
         app:layout_constraintStart_toEndOf="@id/iv_main_search_location"
         android:layout_marginStart="12dp"
         />
+    <TextView
+        android:id="@+id/tv_main_search_review_int"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="12"
+        android:textColor="@color/gray_5"
+        android:textAppearance="@style/Typography.NaverMap.Body10"
+        app:layout_constraintTop_toBottomOf="@id/tv_main_search_address"
+        android:layout_marginTop="6dp"
+        app:layout_constraintStart_toEndOf="@id/tv_main_search_review_string"
+        android:paddingStart="5dp"
+         />
     <TextView
         android:id="@+id/tv_main_search_category"
         android:layout_width="wrap_content"
