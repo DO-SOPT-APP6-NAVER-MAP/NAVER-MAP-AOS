@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">NaverMap</string>
+    <string name="departing_today">오늘 오후 12:17 출발</string>
+    <string name="best_route_order">최적경로순</string>
+    <string name="subway_3">지하철 3</string>
+    <string name="bus_5">버스 5</string>
+    <string name="all_transportation">전체</string>
     <string name="main_search_instructor">검색어를 입력해주세요.</string>
 </resources>
