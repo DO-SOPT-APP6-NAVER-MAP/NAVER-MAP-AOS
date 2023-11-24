@@ -4,7 +4,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
+        <import type="android.view.View"/>
+        <variable
+            name="viewModel"
+            type="org.sopt.navermap.presentation.search.result.TestSearchViewModel" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -201,13 +204,25 @@
                         tools:text="서울 광진구"/>
 
                     <ImageButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:id="@+id/btn_search_detail_address"
+                        android:layout_width="13dp"
+                        android:layout_height="11dp"
+                        android:background="@android:color/transparent"
                         android:src="@drawable/ic_arrow_down_18"
-                        app:layout_constraintTop_toTopOf="@id/tv_search_address"
                         app:layout_constraintBottom_toBottomOf="@id/tv_search_address"
                         app:layout_constraintStart_toEndOf="@id/tv_search_address"
-                        android:background="@android:color/transparent"/>
+                        app:layout_constraintTop_toTopOf="@id/tv_search_address" />
+
+                    <ImageView
+                        android:layout_width="322dp"
+                        android:layout_height="66dp"
+                        android:layout_marginStart="19dp"
+                        android:layout_marginTop="4dp"
+                        android:src="@drawable/ic_search_card_address"
+                        android:visibility="@{viewModel.isBtnClicked ? View.VISIBLE : View.INVISIBLE}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/btn_search_detail_address" />
 
                     <TextView
                         android:id="@+id/tv_search_state_open"

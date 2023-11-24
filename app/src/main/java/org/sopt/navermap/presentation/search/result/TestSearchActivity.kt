@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.LinearLayout
+import androidx.activity.viewModels
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import org.sopt.dosopttemplate.util.binding.DataBindingActivity
 import org.sopt.navermap.R
@@ -14,9 +15,11 @@ class TestSearchActivity :
     DataBindingActivity<ActivityTestSearchBinding>(R.layout.activity_test_search){
 
     private lateinit var behavior: BottomSheetBehavior<LinearLayout>
+    private val viewModel by viewModels<TestSearchViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding.viewModel = viewModel
 
         initSearchView()
 
@@ -25,6 +28,7 @@ class TestSearchActivity :
     private fun initSearchView() {
         makeMapView()
         makeBottomSheet()
+        clickBtnDetailAddress()
     }
 
     private fun makeMapView() {
@@ -58,6 +62,12 @@ class TestSearchActivity :
                 }
             }
         })
+    }
+
+    private fun clickBtnDetailAddress() {
+        binding.btnSearchDetailAddress.setOnClickListener {
+            viewModel.isBtnClicked.value = true
+        }
     }
 
 
