@@ -67,6 +67,6 @@ class SearchMapFragment :
     companion object {
         const val LOGO_GRAVITY = -1
         const val LOCATION_CAPTION = "알고"
-        const val CAMERA_ZOOM = 16.0
+        const val CAMERA_ZOOM = 15.5
     }
 }
