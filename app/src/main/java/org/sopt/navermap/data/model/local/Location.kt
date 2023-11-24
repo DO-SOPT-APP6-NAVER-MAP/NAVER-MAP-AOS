@@ -6,5 +6,6 @@ data class Location(
     val address: String,
     val distance: String,
     val category: String,
-    val review: Int
+    val review: Int,
+    val type: Int
 )
