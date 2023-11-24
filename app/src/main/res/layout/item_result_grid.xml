@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="viewModel"
+            type="org.sopt.navermap.presentation.main.MainActivityViewModel" />
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cl_main_search_result_grid_bar"
+    android:layout_width="160dp"
+    android:layout_height="40dp"
+    android:clipToOutline="true"
+    android:background="@drawable/ic_main_search_grid_bar"
+    >   
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_main_search_gray"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="8dp"
+        android:paddingStart="5dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="4.87dp"
+        android:paddingEnd="4.64dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/cl_main_search_result_grid_bar"
+        app:layout_constraintBottom_toBottomOf="@id/cl_main_search_result_grid_bar"
+        app:layout_constraintStart_toStartOf="@id/cl_main_search_result_grid_bar"
+        app:layout_constraintEnd_toEndOf="@id/cl_main_search_result_grid_bar"
+        android:text="TMP: grid recycler view"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
