@@ -46,9 +46,11 @@ class SearchMapFragment :
 
     private fun initUISetting() {
         val uiSetting = naverMap.uiSettings
-        uiSetting.logoGravity = LOGO_GRAVITY
-        uiSetting.isZoomControlEnabled = false
-        uiSetting.isScaleBarEnabled = false
+        with (uiSetting) {
+            logoGravity = LOGO_GRAVITY
+            isZoomControlEnabled = false
+            isScaleBarEnabled = false
+        }
     }
 
     private fun initMarkerSetting() {
