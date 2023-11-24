@@ -1,22 +1,14 @@
 package org.sopt.navermap.presentation.main
 
+import org.sopt.navermap.data.model.local.Location
+
 class MainActivityViewModel {
-    val mockLocationList = {
-        {
-            "id" : 1,
-            "name": "알고리즘",
-            "address" :"서울 강남구 도산대로49길 8 2층",
-            "distance" : "31km",
-            "category":"퓨전음식",
-            "review" : 12
-        },
-        {
-            "id" : 2,
-            "name": "알고",
-            "adress" : "서울 강동구 천호대로151길 19 2층",
-            "distance" : "4.4km",
-            "category" : "장난감",
-            "review" : 466
-        }
-    ]}
+    val mockLocationList = mutableListOf<Location>(
+        Location(
+            1, "알고리즘", "서울 강남구 도산대로49길 8 2층", "31km", "퓨전음식", 12
+        ), Location(
+            2, "알고", "서울 강동구 천호대로151길 19 2층", "4.4km", "장난감", 466
+        )
+
+    )
 }
