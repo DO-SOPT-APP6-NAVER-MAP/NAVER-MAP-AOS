@@ -118,7 +118,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/ll_tv_starting_destination"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_multiply__black_24" />
+        app:srcCompat="@drawable/ic_multiply_black_24" />
 
     <LinearLayout
         android:id="@+id/ll_transportation_bar"
