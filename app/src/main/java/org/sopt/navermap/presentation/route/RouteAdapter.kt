@@ -4,8 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
+import coil.load
 import org.sopt.navermap.data.model.remote.request.RequestRouteImg
 import org.sopt.navermap.databinding.ItemRouteBinding
 
@@ -33,10 +32,9 @@ class RouteAdapter(private val routeList: List<RequestRouteImg>) :
         private val imageView: ImageView = binding.ivRouteToAlgo
 
         fun bind(item: RequestRouteImg) {
-            Glide.with(imageView.context)
-                .load(item.img_url)
-                .apply(RequestOptions.centerCropTransform())
-                .into(imageView)
+            imageView.load(item.img_url) {
+                crossfade(true)
+            }
         }
     }
 }
