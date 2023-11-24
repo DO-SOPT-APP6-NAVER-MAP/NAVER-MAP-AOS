@@ -22,6 +22,8 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField "String", "NAVER_CLIENT_ID", properties["naver.client.id"]
+        buildConfigField "Double", "LOCATION_LATITUDE", properties["location.latitude"]
+        buildConfigField "Double", "LOCATION_LONGITUDE", properties["location.longitude"]
     }
 
     buildTypes {
