@@ -26,14 +26,14 @@
                 android:id="@+id/rv_main_search_grid"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="12dp"
                 android:orientation="vertical"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintBottom_toTopOf="@id/v_search_mid_bar"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toTopOf="@id/v_search_mid_bar"
-                android:layout_marginStart="12dp"
-                android:layout_marginEnd="12dp"
-                android:layout_marginTop="8dp"
                 app:spanCount="2"
 
                 />
@@ -42,11 +42,11 @@
                 android:id="@+id/v_search_mid_bar"
                 android:layout_width="match_parent"
                 android:layout_height="6dp"
+                android:layout_marginTop="8dp"
                 android:alpha="0.3"
                 android:background="@color/gray_3"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/rv_main_search_grid"
-                android:layout_marginTop="8dp"/>
+                app:layout_constraintTop_toBottomOf="@id/rv_main_search_grid" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_main_search_list"
