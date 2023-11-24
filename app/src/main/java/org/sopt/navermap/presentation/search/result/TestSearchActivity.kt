@@ -66,7 +66,11 @@ class TestSearchActivity :
 
     private fun clickBtnDetailAddress() {
         binding.btnSearchDetailAddress.setOnClickListener {
-            viewModel.isBtnClicked.value = true
+            when (viewModel.isBtnClicked.value) {
+                true -> viewModel.isBtnClicked.value = false
+                false -> viewModel.isBtnClicked.value = true
+                else -> viewModel.isBtnClicked.value = false
+            }
         }
     }
 
