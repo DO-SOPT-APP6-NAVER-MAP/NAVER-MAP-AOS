@@ -28,16 +28,28 @@
         android:src="@drawable/ic_location_24"
         />
     <TextView
-        android:id="@+id/tv_main_search_list_title"
+        android:id="@+id/tv_main_search_list_title_entered"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="알고리즘"
+        android:text="알고"
         android:textColor="@color/blue"
         android:textAppearance="@style/Typography.NaverMap.Body1"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toEndOf="@id/iv_main_search_location"
         android:layout_marginStart="12dp"
+        />
+    <TextView
+        android:id="@+id/tv_main_search_list_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="리즘"
+        android:textColor="@color/black"
+        android:textAppearance="@style/Typography.NaverMap.Body1"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toEndOf="@id/tv_main_search_list_title_entered"
+
         />
     <TextView
         android:id="@+id/tv_main_search_address"

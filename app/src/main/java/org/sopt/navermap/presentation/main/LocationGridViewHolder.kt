@@ -7,6 +7,7 @@ import org.sopt.navermap.databinding.ItemResultGridBinding
 class LocationGridViewHolder(private val binding: ItemResultGridBinding) :
     RecyclerView.ViewHolder(binding.root) {
     fun onBind(locationData: Location) {
-        binding.tvMainSearchGridTitle.text = locationData.name
+        binding.tvMainSearchGridTitleEntered.text = locationData.nameEntered
+        binding.tvMainSearchGridTitle.text = locationData.nameRemain
     }
 }

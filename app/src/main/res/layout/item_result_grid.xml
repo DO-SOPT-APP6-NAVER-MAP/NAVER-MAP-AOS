@@ -40,14 +40,24 @@
         />
 
     <TextView
-        android:id="@+id/tv_main_search_grid_title"
+        android:id="@+id/tv_main_search_grid_title_entered"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="@id/cl_main_search_result_grid_bar"
         app:layout_constraintBottom_toBottomOf="@id/cl_main_search_result_grid_bar"
         app:layout_constraintStart_toEndOf="@id/iv_main_search_search_glass"
         android:layout_marginStart="4dp"
+        android:textColor="@color/blue"
         android:text="알고"
+        android:textAppearance="@style/Typography.NaverMap.Body5"/>
+    <TextView
+        android:id="@+id/tv_main_search_grid_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/cl_main_search_result_grid_bar"
+        app:layout_constraintBottom_toBottomOf="@id/cl_main_search_result_grid_bar"
+        app:layout_constraintStart_toEndOf="@id/tv_main_search_grid_title_entered"
+        android:text="리즘"
         android:textAppearance="@style/Typography.NaverMap.Body5"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
