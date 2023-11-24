@@ -2,6 +2,7 @@ package org.sopt.navermap.presentation.main
 
 import android.os.Bundle
 import android.view.View
+import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.viewModels
 import org.sopt.dosopttemplate.util.binding.DataBindingFragment
 import org.sopt.navermap.R
@@ -14,8 +15,18 @@ class MainsearchFragment :
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val locationAdapter = LocationListAdapter(requireContext())
-        binding.rvMainSearchGrid.adapter = profileAdapter
-        profileAdapter.setProfileList(viewModel.getMockProfileLIst())
+
+        val currentFragment = childFragmentManager.findFragmentById(R.id.fcv_main_search_result_grid)
+        if (currentFragment == null ) {
+            childFragmentManager.beginTransaction()
+                .add(R.id.fcv_main_search_result_grid, MainsearchgridFragment())
+                .commit()
+        }
+        val secondCurrentFragment = childFragmentManager.findFragmentById(R.id.fcv_main_search_result_list)
+        if (currentFragment == null ) {
+            childFragmentManager.beginTransaction()
+                .add(R.id.fcv_main_search_result_list, MainsearchlistFragment())
+                .commit()
+        }
     }
 }

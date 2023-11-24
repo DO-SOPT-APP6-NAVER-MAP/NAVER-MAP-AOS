@@ -10,11 +10,20 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cl_main_search_result_grid_bar"
-    android:layout_width="160dp"
-    android:layout_height="40dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:clipToOutline="true"
-    android:background="@drawable/ic_main_search_grid_bar"
-    >   
+    >
+    <View
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="8dp"
+        android:background="@drawable/ic_main_search_grid_bar"
+        />
     <ImageView
         android:id="@+id/iv_main_search_search_glass"
         android:layout_width="24dp"
