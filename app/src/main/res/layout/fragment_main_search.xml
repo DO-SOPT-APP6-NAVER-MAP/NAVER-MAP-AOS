@@ -1,45 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    >
-    <data
-        >
-        <import type="android.view.View"/>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
         <variable
             name="viewModel"
             type="org.sopt.navermap.presentation.main.MainActivityViewModel" />
     </data>
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
-
-        <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fcv_main_search_result_grid"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="112dp"
+        android:layout_height="match_parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-        <View
-            android:id="@+id/v_search_mid_bar"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="6dp"
-            android:background="@color/gray_3"
-            android:alpha="0.3"
-            app:layout_constraintTop_toBottomOf="@id/fcv_main_search_result_grid"
-            app:layout_constraintStart_toStartOf="parent"
-            />
-
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fcv_main_search_result_list"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/v_search_mid_bar"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            android:layout_height="match_parent">
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_main_search_grid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:spanCount="2"
+
+                />
+
+            <View
+                android:id="@+id/v_search_mid_bar"
+                android:layout_width="match_parent"
+                android:layout_height="6dp"
+                android:alpha="0.3"
+                android:background="@color/gray_3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rv_main_search_grid" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_main_search_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/v_search_mid_bar" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </layout>
