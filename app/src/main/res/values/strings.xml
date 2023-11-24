@@ -6,4 +6,7 @@
     <string name="bus_5">버스 5</string>
     <string name="all_transportation">전체</string>
     <string name="main_search_instructor">검색어를 입력해주세요.</string>
+    <string name="search_position">알고</string>
+    <string name="search_state_open">영업중</string>
+    <string name="search_last_order">22:00에 라스트 오더</string>
 </resources>
