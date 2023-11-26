@@ -41,6 +41,7 @@ class TestSearchActivity :
     }
 
     private fun makeBottomSheet() {
+        getSearchResultData()
         behavior = BottomSheetBehavior.from(binding.bottomSheetSearch)
         behavior.addBottomSheetCallback(object : BottomSheetBehavior.BottomSheetCallback() {
             override fun onSlide(bottomSheet: View, slideOffset: Float) {
@@ -62,6 +63,21 @@ class TestSearchActivity :
                 }
             }
         })
+    }
+
+    private fun getSearchResultData() {
+        viewModel.mockSearchResult.observe(this) { data ->
+            with(binding) {
+                tvSearchName.text = data.name
+                tvSearchAddress.text = data.address
+                tvSearchDistance.text = data.distance
+                tvSearchCategory.text = data.category
+                tvSearchDescription.text = data.description
+                tvSearchVisitorReview.text = "방문자 리뷰 ${data.visitor_review}"
+                tvSearchBlogReview.text = "블로그 리뷰 ${data.blog_review}"
+                tvSearchStars.text = data.stars.toString()
+            }
+        }
     }
 
     private fun clickBtnDetailAddress() {

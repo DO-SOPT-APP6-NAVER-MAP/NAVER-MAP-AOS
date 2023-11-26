@@ -142,7 +142,6 @@
                         android:layout_marginStart="19dp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        android:text="@string/search_name"
                         tools:text="알고"/>
 
                     <TextView
@@ -154,7 +153,6 @@
                         android:textAppearance="@style/Typography.NaverMap.Body10"
                         app:layout_constraintStart_toEndOf="@id/tv_search_name"
                         app:layout_constraintBottom_toBottomOf="@id/tv_search_name"
-                        android:text="@string/search_category"
                         tools:text="스파게티, 파스타 전문"/>
 
                     <TextView
@@ -165,7 +163,6 @@
                         android:textColor="@color/gray_6"
                         app:layout_constraintStart_toStartOf="@id/tv_search_name"
                         app:layout_constraintTop_toBottomOf="@id/tv_search_name"
-                        android:text="@string/search_description"
                         tools:text="수제 맥주를 즐길 수 있는 어린이대공원 파스타 맛집"/>
 
                     <TextView
@@ -178,7 +175,6 @@
                         android:textAppearance="@style/Typography.NaverMap.Body3"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/tv_search_description"
-                        android:text="@string/search_distance"
                         tools:text="936m"/>
 
                     <ImageView
@@ -200,7 +196,6 @@
                         app:layout_constraintStart_toEndOf="@id/tv_search_distance"
                         app:layout_constraintTop_toTopOf="@id/tv_search_distance"
                         app:layout_constraintBottom_toBottomOf="@id/tv_search_distance"
-                        android:text="@string/search_address"
                         tools:text="서울 광진구"/>
 
                     <ImageButton
@@ -267,7 +262,6 @@
                         app:layout_constraintTop_toTopOf="@id/tv_search_visitor_review"
                         app:layout_constraintBottom_toBottomOf="@id/tv_search_visitor_review"
                         app:layout_constraintStart_toStartOf="parent"
-                        android:text="@string/search_stars"
                         tools:text="4.82"/>
                     
                     <TextView
@@ -282,7 +276,6 @@
                         android:textAppearance="@style/Typography.NaverMap.Body7"
                         app:layout_constraintTop_toBottomOf="@id/tv_search_last_order"
                         app:layout_constraintStart_toEndOf="@id/tv_search_stars"
-                        android:text="@string/search_visitor"
                         tools:text="방문자리뷰 288"/>
 
                     <TextView
@@ -296,7 +289,6 @@
                         android:textAppearance="@style/Typography.NaverMap.Body7"
                         app:layout_constraintTop_toTopOf="@id/tv_search_visitor_review"
                         app:layout_constraintStart_toEndOf="@id/tv_search_visitor_review"
-                        android:text="@string/search_blog"
                         tools:text="블로그리뷰 316"/>
 
                     <ImageView
