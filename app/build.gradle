@@ -21,6 +21,9 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField "String", "NAVER_CLIENT_ID", properties["naver.client.id"]
+        buildConfigField "Double", "LOCATION_LATITUDE", properties["location.latitude"]
+        buildConfigField "Double", "LOCATION_LONGITUDE", properties["location.longitude"]
     }
 
     buildTypes {
@@ -71,6 +74,9 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    // 네이버 지도 sdk
+    implementation "com.naver.maps:map-sdk:3.17.0"
 }
 
 kapt {

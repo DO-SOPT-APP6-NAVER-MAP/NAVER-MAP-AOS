@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="viewModel"
+            type="org.sopt.navermap.presentation.search.result.TestSearchViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/fcv_search_map"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_search_copy"
+                android:layout_marginEnd="17dp"
+                android:layout_marginStart="303dp"
+                android:layout_marginTop="12dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_search_favorite"
+                android:layout_marginEnd="17dp"
+                android:layout_marginStart="303dp"
+                android:layout_marginTop="59dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_search_location"
+                android:layout_marginEnd="17dp"
+                android:layout_marginStart="303dp"
+                android:layout_marginTop="106dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_search_current"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="229dp"
+                android:layout_marginBottom="25dp"/>
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/bottom_sheet_search"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:behavior_hideable="false"
+            android:background="@drawable/shape_white_fill_top20_rect"
+            app:behavior_peekHeight="400dp"
+            android:elevation="30dp"
+            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="34dp"
+                    android:layout_height="4dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/shape_gray_fill_2_rect"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_search_bottom_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="320dp"
+                    app:layout_constraintBottom_toBottomOf="@id/ll_search_line"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="31dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:layout_width="42dp"
+                            android:layout_height="13dp"
+                            android:src="@drawable/ic_search_naverpay" />
+
+                        <ImageView
+                            android:layout_width="34dp"
+                            android:layout_height="12dp"
+                            android:layout_marginStart="8dp"
+                            android:src="@drawable/ic_search_naverbooking" />
+
+                        <FrameLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp">
+
+                            <ImageView
+                                android:layout_width="34dp"
+                                android:layout_height="12dp"
+                                android:src="@drawable/ic_search_naverorder" />
+
+                            <ImageView
+                                android:layout_width="5dp"
+                                android:layout_height="5dp"
+                                android:layout_marginHorizontal="4dp"
+                                android:layout_marginVertical="4dp"
+                                android:src="@drawable/ic_search_n" />
+
+                        </FrameLayout>
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_search_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/sub_blue"
+                        android:textAppearance="@style/Typography.NaverMap.Title2"
+                        android:layout_marginTop="53dp"
+                        android:layout_marginStart="19dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:text="@string/search_name"
+                        tools:text="알고"/>
+
+                    <TextView
+                        android:id="@+id/tv_search_category"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:textColor="@color/gray_4"
+                        android:textAppearance="@style/Typography.NaverMap.Body10"
+                        app:layout_constraintStart_toEndOf="@id/tv_search_name"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_search_name"
+                        android:text="@string/search_category"
+                        tools:text="스파게티, 파스타 전문"/>
+
+                    <TextView
+                        android:id="@+id/tv_search_description"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:textColor="@color/gray_6"
+                        app:layout_constraintStart_toStartOf="@id/tv_search_name"
+                        app:layout_constraintTop_toBottomOf="@id/tv_search_name"
+                        android:text="@string/search_description"
+                        tools:text="수제 맥주를 즐길 수 있는 어린이대공원 파스타 맛집"/>
+
+                    <TextView
+                        android:id="@+id/tv_search_distance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="13dp"
+                        android:textColor="@color/gray_6"
+                        android:textAppearance="@style/Typography.NaverMap.Body3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_search_description"
+                        android:text="@string/search_distance"
+                        tools:text="936m"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_search_eclipse"
+                        android:layout_marginStart="6dp"
+                        app:layout_constraintTop_toTopOf="@id/tv_search_distance"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_search_distance"
+                        app:layout_constraintStart_toEndOf="@id/tv_search_distance" />
+
+                    <TextView
+                        android:id="@+id/tv_search_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="13dp"
+                        android:textColor="@color/gray_6"
+                        android:textAppearance="@style/Typography.NaverMap.BodyButton"
+                        app:layout_constraintStart_toEndOf="@id/tv_search_distance"
+                        app:layout_constraintTop_toTopOf="@id/tv_search_distance"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_search_distance"
+                        android:text="@string/search_address"
+                        tools:text="서울 광진구"/>
+
+                    <ImageButton
+                        android:id="@+id/btn_search_detail_address"
+                        android:layout_width="13dp"
+                        android:layout_height="11dp"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/ic_arrow_down_18"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_search_address"
+                        app:layout_constraintStart_toEndOf="@id/tv_search_address"
+                        app:layout_constraintTop_toTopOf="@id/tv_search_address" />
+
+                    <ImageView
+                        android:layout_width="322dp"
+                        android:layout_height="66dp"
+                        android:layout_marginStart="19dp"
+                        android:layout_marginTop="4dp"
+                        android:src="@drawable/ic_search_card_address"
+                        android:visibility="@{viewModel.isBtnClicked ? View.VISIBLE : View.INVISIBLE}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/btn_search_detail_address" />
+
+                    <TextView
+                        android:id="@+id/tv_search_state_open"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/search_state_open"
+                        android:textColor="@color/never_green"
+                        android:textAppearance="@style/Typography.NaverMap.Body6"
+                        android:layout_marginTop="13dp"
+                        android:layout_marginStart="20dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_search_distance"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/tv_search_last_order"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/search_last_order"
+                        android:textColor="@color/gray_7"
+                        android:textAppearance="@style/Typography.NaverMap.Body7"
+                        android:layout_marginStart="16dp"
+                        app:layout_constraintTop_toTopOf="@id/tv_search_state_open"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_search_state_open"
+                        app:layout_constraintStart_toEndOf="@id/tv_search_state_open"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_search_star_12"
+                        android:layout_marginStart="20dp"
+                        app:layout_constraintTop_toTopOf="@id/tv_search_visitor_review"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_search_visitor_review"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/tv_search_stars"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="34dp"
+                        android:textColor="@color/gray_7"
+                        android:textAppearance="@style/Typography.NaverMap.Body7"
+                        app:layout_constraintTop_toTopOf="@id/tv_search_visitor_review"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_search_visitor_review"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:text="@string/search_stars"
+                        tools:text="4.82"/>
+                    
+                    <TextView
+                        android:id="@+id/tv_search_visitor_review"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginStart="16dp"
+                        android:background="@drawable/shape_green_fill_3_rect"
+                        android:padding="4dp"
+                        android:textColor="@color/gray_7"
+                        android:textAppearance="@style/Typography.NaverMap.Body7"
+                        app:layout_constraintTop_toBottomOf="@id/tv_search_last_order"
+                        app:layout_constraintStart_toEndOf="@id/tv_search_stars"
+                        android:text="@string/search_visitor"
+                        tools:text="방문자리뷰 288"/>
+
+                    <TextView
+                        android:id="@+id/tv_search_blog_review"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:background="@drawable/shape_green_fill_3_rect"
+                        android:padding="4dp"
+                        android:textColor="@color/gray_7"
+                        android:textAppearance="@style/Typography.NaverMap.Body7"
+                        app:layout_constraintTop_toTopOf="@id/tv_search_visitor_review"
+                        app:layout_constraintStart_toEndOf="@id/tv_search_visitor_review"
+                        android:text="@string/search_blog"
+                        tools:text="블로그리뷰 316"/>
+
+                    <ImageView
+                        android:id="@+id/iv_search_image1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/img_search_image1"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginStart="15dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_search_visitor_review"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                    <ImageView
+                        android:id="@+id/iv_search_image2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/img_search_image2"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginStart="2dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_search_visitor_review"
+                        app:layout_constraintStart_toEndOf="@id/iv_search_image1"/>
+
+                    <ImageView
+                        android:id="@+id/iv_search_image3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/img_search_image3"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginEnd="15dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_search_visitor_review"
+                        app:layout_constraintStart_toEndOf="@id/iv_search_image2"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_search_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/gray_1"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toBottomOf="@id/cl_search_bottom_content"/>
+
+                <ImageView
+                    android:id="@+id/iv_search_cal_n"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_search_cal_n"
+                    android:layout_marginTop="9dp"
+                    android:layout_marginStart="19dp"
+                    app:layout_constraintTop_toBottomOf="@id/ll_search_line"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/iv_search_call"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_search_call"
+                    android:layout_marginTop="9dp"
+                    android:layout_marginStart="20dp"
+                    app:layout_constraintTop_toBottomOf="@id/ll_search_line"
+                    app:layout_constraintStart_toEndOf="@id/iv_search_cal_n"/>
+
+                <ImageView
+                    android:id="@+id/iv_search_star"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_search_star"
+                    android:layout_marginTop="9dp"
+                    android:layout_marginStart="20dp"
+                    app:layout_constraintTop_toBottomOf="@id/ll_search_line"
+                    app:layout_constraintStart_toEndOf="@id/iv_search_call"/>
+
+                <ImageView
+                    android:id="@+id/iv_search_share"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_search_share"
+                    android:layout_marginTop="9dp"
+                    android:layout_marginStart="20dp"
+                    app:layout_constraintTop_toBottomOf="@id/ll_search_line"
+                    app:layout_constraintStart_toEndOf="@id/iv_search_star"/>
+
+                <ImageButton
+                    android:id="@+id/btn_search_arrive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_search_btn_arrive"
+                    android:background="@android:color/transparent"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginEnd="6dp"
+                    app:layout_constraintTop_toBottomOf="@id/ll_search_line"
+                    app:layout_constraintEnd_toStartOf="@id/btn_search_departure"/>
+
+                <ImageButton
+                    android:id="@+id/btn_search_departure"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_search_btn_departure"
+                    android:background="@android:color/transparent"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginEnd="23dp"
+                    app:layout_constraintTop_toBottomOf="@id/ll_search_line"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
