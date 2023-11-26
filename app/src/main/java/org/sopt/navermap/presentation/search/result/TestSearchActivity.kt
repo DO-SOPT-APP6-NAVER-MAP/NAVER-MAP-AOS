@@ -65,6 +65,7 @@ class TestSearchActivity :
         })
     }
 
+
     private fun getSearchResultData() {
         viewModel.mockSearchResult.observe(this) { data ->
             with(binding) {
@@ -79,6 +80,7 @@ class TestSearchActivity :
             }
         }
     }
+
 
     private fun clickBtnDetailAddress() {
         binding.btnSearchDetailAddress.setOnClickListener {

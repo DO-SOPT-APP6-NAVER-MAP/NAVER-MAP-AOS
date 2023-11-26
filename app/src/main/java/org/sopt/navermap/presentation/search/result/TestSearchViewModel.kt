@@ -26,4 +26,5 @@ class TestSearchViewModel : ViewModel() {
 
     val mockSearchResult: LiveData<SearchResult>
         get() = _mockSearchReultList
+
 }
