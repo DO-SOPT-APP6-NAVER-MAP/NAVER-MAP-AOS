@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".App"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -40,5 +41,12 @@
             android:exported="true"
             android:screenOrientation="portrait">
         </activity>
+        <activity
+            android:name=".presentation.search.result.TestSearchActivity"
+            android:exported="false">
+        </activity>
+        <activity
+            android:name=".presentation.search.result.TestSearch2Activity"
+            android:exported="false" />
     </application>
 </manifest>

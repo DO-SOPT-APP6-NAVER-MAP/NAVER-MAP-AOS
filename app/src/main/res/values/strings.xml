@@ -6,4 +6,15 @@
     <string name="bus_5">버스 5</string>
     <string name="all_transportation">전체</string>
     <string name="main_search_instructor">검색어를 입력해주세요.</string>
+    <string name="search_position">알고</string>
+    <string name="search_state_open">영업중</string>
+    <string name="search_last_order">22:00에 라스트 오더</string>
+    <string name="search_name">알고</string>
+    <string name="search_category">스파게티, 파스타 전문</string>
+    <string name="search_description">수제 맥주를 즐길 수 있는 어린이대공원 파스타 맛집</string>
+    <string name="search_distance">936m</string>
+    <string name="search_address">서울 광진구</string>
+    <string name="search_stars">4.82</string>
+    <string name="search_visitor">방문자리뷰 288</string>
+    <string name="search_blog">블로그리뷰 316</string>
 </resources>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="org.sopt.navermap.presentation.main.MainActivityViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/cl_main_search_result_grid_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToOutline="true">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_margin="4dp"
+            android:background="@drawable/ic_main_search_grid_bar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_main_search_search_glass"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="8dp"
+            android:paddingStart="5dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="4.64dp"
+            android:paddingBottom="4.87dp"
+            android:src="@drawable/ic_main_search_gray"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_main_search_grid_title_entered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="알고"
+            android:textAppearance="@style/Typography.NaverMap.Body5"
+            android:textColor="@color/blue"
+            app:layout_constraintBottom_toBottomOf="@id/cl_main_search_result_grid_bar"
+            app:layout_constraintStart_toEndOf="@id/iv_main_search_search_glass"
+            app:layout_constraintTop_toTopOf="@id/cl_main_search_result_grid_bar" />
+
+        <TextView
+            android:id="@+id/tv_main_search_grid_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="리즘"
+            android:textAppearance="@style/Typography.NaverMap.Body5"
+            app:layout_constraintBottom_toBottomOf="@id/cl_main_search_result_grid_bar"
+            app:layout_constraintStart_toEndOf="@id/tv_main_search_grid_title_entered"
+            app:layout_constraintTop_toTopOf="@id/cl_main_search_result_grid_bar" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
