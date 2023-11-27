@@ -7,11 +7,10 @@ import org.sopt.navermap.util.binding.ViewBindingActivity
 
 class DetailActivity :
     ViewBindingActivity<ActivityDetailBinding>({ ActivityDetailBinding.inflate(it) }) {
+    var intColorCode = 255
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-
-        var intColorCode = 255
 
         binding.detailAppbar.addOnOffsetChangedListener{ _, verticalOffset ->
             intColorCode = -verticalOffset/2
