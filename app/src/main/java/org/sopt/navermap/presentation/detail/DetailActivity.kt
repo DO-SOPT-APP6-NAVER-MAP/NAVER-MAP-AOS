@@ -2,12 +2,12 @@ package org.sopt.navermap.presentation.detail
 
 import android.os.Bundle
 import androidx.activity.viewModels
+import org.sopt.dosopttemplate.util.binding.DataBindingActivity
 import org.sopt.navermap.R
 import org.sopt.navermap.databinding.ActivityDetailBinding
-import org.sopt.navermap.util.binding.ViewBindingActivity
 
 class DetailActivity :
-    ViewBindingActivity<ActivityDetailBinding>({ ActivityDetailBinding.inflate(it) }) {
+    DataBindingActivity<ActivityDetailBinding>(R.layout.activity_detail) {
     var intColorCode = 255
     private val viewModel: DetailViewModel by viewModels { DetailViewModelFactory() }
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,20 +22,7 @@ class DetailActivity :
 
     private fun initGetDetailResultObserver() {
         viewModel.getDetailResult.observe(this) {
-            binding.tvDetailMain.text = it.data.name
-            binding.tvDetailTitle.text = it.data.name
-            binding.tvDetailSubtitle.text = it.data.category
-            binding.tvDetailDescription.text = it.data.description
-            binding.tvDetailStar.text = it.data.stars
-            binding.tvDetailVisitorReview.text = "방문자리뷰 " + it.data.visitorReview.toString()
-            binding.tvDetailBlogReview.text = "블로그리뷰 " + it.data.blogReview.toString()
-            binding.tvDetailLocation1.text = it.data.detailAddress
-            binding.tvDetailLocation2.text = it.data.direction
-            binding.tvDetailTime2.text = it.data.closeTime + "에 라스트 오더"
-            binding.tvDetailCall1.text = it.data.number
-            binding.tvDetailHome.text = it.data.characters
-            binding.tvDetailInternet.text = it.data.sns
-            binding.tvDetailInfo.text = it.data.detail
+            binding.data = it
         }
     }
 

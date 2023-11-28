@@ -11,12 +11,14 @@ data class ResponseGetDetailDto(
     @SerialName("message")
     val message: String,
     @SerialName("statusCode")
-    val status: Int
-) {
+    val statusCode: Int
+){
     @Serializable
     data class Data(
         @SerialName("blogReview")
         val blogReview: Int,
+        @SerialName("blogReviewInfos")
+        val blogReviewInfos: List<BlogReviewInfo>,
         @SerialName("category")
         val category: String,
         @SerialName("characters")
@@ -31,6 +33,8 @@ data class ResponseGetDetailDto(
         val detailAddress: String,
         @SerialName("direction")
         val direction: String,
+        @SerialName("menuInfos")
+        val menuInfos: List<MenuInfo>,
         @SerialName("name")
         val name: String,
         @SerialName("number")
@@ -40,6 +44,48 @@ data class ResponseGetDetailDto(
         @SerialName("stars")
         val stars: String,
         @SerialName("visitorReview")
-        val visitorReview: Int
-    )
+        val visitorReview: Int,
+        @SerialName("visitorReviewInfos")
+        val visitorReviewInfos: List<VisitorReviewInfo>
+    ){
+        @Serializable
+        data class BlogReviewInfo(
+            @SerialName("visitorReviewAuthor")
+            val visitorReviewAuthor: String,
+            @SerialName("visitorReviewAuthorThumbnail")
+            val visitorReviewAuthorThumbnail: String,
+            @SerialName("visitorReviewContent")
+            val visitorReviewContent: String,
+            @SerialName("visitorReviewId")
+            val visitorReviewId: Int,
+            @SerialName("visitorReviewImgUrl")
+            val visitorReviewImgUrl: String,
+            @SerialName("visitorReviewTitle")
+            val visitorReviewTitle: String
+        )
+        @Serializable
+        data class MenuInfo(
+            @SerialName("menuId")
+            val menuId: Int,
+            @SerialName("menuImgUrl")
+            val menuImgUrl: String,
+            @SerialName("menuName")
+            val menuName: String,
+            @SerialName("menuPrice")
+            val menuPrice: Int
+        )
+        @Serializable
+        data class VisitorReviewInfo(
+            @SerialName("visitorReviewAuthor")
+            val visitorReviewAuthor: String,
+            @SerialName("visitorReviewAuthorThumbnail")
+            val visitorReviewAuthorThumbnail: String,
+            @SerialName("visitorReviewContent")
+            val visitorReviewContent: String,
+            @SerialName("visitorReviewId")
+            val visitorReviewId: Int,
+            @SerialName("visitorReviewImgUrl")
+            val visitorReviewImgUrl: String
+        )
+    }
 }
