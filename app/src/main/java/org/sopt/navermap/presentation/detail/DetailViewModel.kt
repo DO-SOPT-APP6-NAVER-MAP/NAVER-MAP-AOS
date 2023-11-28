@@ -22,12 +22,12 @@ class DetailViewModel(
         viewModelScope.launch {
             detailRepository.getDetail(placeId)
                 .onSuccess {
-                    Log.e("서버통신","성공")
+                    Log.e("서버통신", "성공")
                     _getDetailResult.value = it
                     _getDetailSuccess.value = true
                 }
                 .onFailure {
-                    Log.e("서버통신","${it.message}")
+                    Log.e("서버통신", "${it.message}")
                     _getDetailSuccess.value = false
                 }
         }

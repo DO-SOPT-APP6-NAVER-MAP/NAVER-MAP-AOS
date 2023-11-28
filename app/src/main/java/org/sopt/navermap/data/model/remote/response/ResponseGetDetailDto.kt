@@ -12,7 +12,7 @@ data class ResponseGetDetailDto(
     val message: String,
     @SerialName("statusCode")
     val status: Int
-){
+) {
     @Serializable
     data class Data(
         @SerialName("blogReview")

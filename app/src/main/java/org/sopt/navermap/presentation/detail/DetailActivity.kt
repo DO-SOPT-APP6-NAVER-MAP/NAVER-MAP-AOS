@@ -9,14 +9,19 @@ import org.sopt.navermap.util.binding.ViewBindingActivity
 class DetailActivity :
     ViewBindingActivity<ActivityDetailBinding>({ ActivityDetailBinding.inflate(it) }) {
     var intColorCode = 255
-    private val viewModel : DetailViewModel by viewModels { DetailViewModelFactory() }
+    private val viewModel: DetailViewModel by viewModels { DetailViewModelFactory() }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
         viewModel.getDetail(1)
 
-        viewModel.getDetailResult.observe(this){
+        initGetDetailResultObserver()
+        initAppbarOffsetChangedListener()
+    }
+
+    private fun initGetDetailResultObserver() {
+        viewModel.getDetailResult.observe(this) {
             binding.tvDetailMain.text = it.data.name
             binding.tvDetailTitle.text = it.data.name
             binding.tvDetailSubtitle.text = it.data.category
@@ -32,8 +37,6 @@ class DetailActivity :
             binding.tvDetailInternet.text = it.data.sns
             binding.tvDetailInfo.text = it.data.detail
         }
-
-        initAppbarOffsetChangedListener()
     }
 
     private fun initAppbarOffsetChangedListener() {
