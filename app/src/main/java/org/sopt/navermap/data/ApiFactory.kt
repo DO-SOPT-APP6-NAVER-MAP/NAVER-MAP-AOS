@@ -5,6 +5,7 @@ import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import org.sopt.navermap.data.service.SimpleService
 import retrofit2.Retrofit
 
 object ApiFactory {
@@ -25,4 +26,5 @@ object ApiFactory {
 }
 
 object ServicePool {
+    val simpleService = ApiFactory.create<SimpleService>()
 }
