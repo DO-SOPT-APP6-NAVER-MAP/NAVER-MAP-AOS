@@ -5,7 +5,7 @@ import coil.load
 import org.sopt.navermap.data.model.remote.response.DirectionLists
 import org.sopt.navermap.databinding.ItemRouteBinding
 
-class  RouteViewHolder(private val binding: ItemRouteBinding) :
+class RouteViewHolder(private val binding: ItemRouteBinding) :
     RecyclerView.ViewHolder(binding.root) {
     fun bind(item: DirectionLists) {
         binding.ivRouteToAlgo.load(item.route) {

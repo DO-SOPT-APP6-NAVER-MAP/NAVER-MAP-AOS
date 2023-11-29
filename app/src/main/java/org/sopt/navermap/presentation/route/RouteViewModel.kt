@@ -28,11 +28,11 @@ class RouteViewModel(private val routeRepository: RouteRepository) : ViewModel()
                 }
                 response.onSuccess { result ->
                     _directionLists.value = result.data.directionLists
-                    Log.d("route success","${result.data}")
+                    Log.d("route success", "${result.data}")
                 }
                 response.onFailure { throwable ->
                     _error.value = throwable.message
-                    Log.d("route fail","${throwable}")
+                    Log.d("route fail", "${throwable}")
                 }
             } catch (e: Exception) {
                 _error.value = e.message

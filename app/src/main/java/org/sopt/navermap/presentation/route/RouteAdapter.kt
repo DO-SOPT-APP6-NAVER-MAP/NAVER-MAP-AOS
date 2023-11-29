@@ -1,4 +1,3 @@
-// RouteAdapter.kt
 package org.sopt.navermap.presentation.route
 
 import android.view.LayoutInflater
