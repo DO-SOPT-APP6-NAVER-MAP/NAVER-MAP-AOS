@@ -13,16 +13,15 @@ import org.sopt.navermap.databinding.ActivityTestSearchBinding
 
 class TestSearchActivity :
     DataBindingActivity<ActivityTestSearchBinding>(R.layout.activity_test_search){
-
     private lateinit var behavior: BottomSheetBehavior<LinearLayout>
-    private val viewModel by viewModels<TestSearchViewModel>()
+    private val viewModel: TestSearchViewModel by viewModels { TestSearchViewModelFactory() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding.viewModel = viewModel
 
         initSearchView()
-
+        initSimpleDataObserver()
     }
 
     private fun initSearchView() {
@@ -41,7 +40,7 @@ class TestSearchActivity :
     }
 
     private fun makeBottomSheet() {
-        getSearchResultData()
+        // getSearchResultData()
         behavior = BottomSheetBehavior.from(binding.bottomSheetSearch)
         behavior.addBottomSheetCallback(object : BottomSheetBehavior.BottomSheetCallback() {
             override fun onSlide(bottomSheet: View, slideOffset: Float) {
@@ -66,17 +65,27 @@ class TestSearchActivity :
     }
 
 
-    private fun getSearchResultData() {
-        viewModel.mockSearchResult.observe(this) { data ->
+//    private fun getSearchResultData() {
+//        viewModel.mockSearchResult.observe(this) { data ->
+//            with(binding) {
+//                tvSearchName.text = data.name
+//                tvSearchAddress.text = data.address
+//                tvSearchDistance.text = data.distance
+//                tvSearchCategory.text = data.category
+//                tvSearchDescription.text = data.description
+//                tvSearchVisitorReview.text = "방문자 리뷰 ${data.visitor_review}"
+//                tvSearchBlogReview.text = "블로그 리뷰 ${data.blog_review}"
+//                tvSearchStars.text = data.stars.toString()
+//            }
+//        }
+//    }
+
+    private fun initSimpleDataObserver() {
+        //
+        viewModel.getSimple(1)
+        viewModel.getSimpleData.observe(this) { data ->
             with(binding) {
-                tvSearchName.text = data.name
-                tvSearchAddress.text = data.address
-                tvSearchDistance.text = data.distance
-                tvSearchCategory.text = data.category
-                tvSearchDescription.text = data.description
-                tvSearchVisitorReview.text = "방문자 리뷰 ${data.visitor_review}"
-                tvSearchBlogReview.text = "블로그 리뷰 ${data.blog_review}"
-                tvSearchStars.text = data.stars.toString()
+                tvSearchName.text = data.data.name
             }
         }
     }
