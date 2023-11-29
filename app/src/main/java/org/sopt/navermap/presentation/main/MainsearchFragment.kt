@@ -21,7 +21,5 @@ class MainsearchFragment :
         val locationListAdapter = LocationListAdapter(requireContext())
         binding.rvMainSearchList.adapter = locationListAdapter
         locationListAdapter.setLocationList(viewModel.mockLocationList)
-
-
     }
 }

@@ -2,6 +2,9 @@ package org.sopt.navermap.presentation.main
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.launch
+import org.sopt.navermap.data.ServicePool.searchNameService
 import org.sopt.navermap.data.model.local.Location
 
 class MainActivityViewModel : ViewModel() {
@@ -53,6 +56,21 @@ class MainActivityViewModel : ViewModel() {
 
     )
 
-
+    fun searchName() {
+//        viewModelScope.launch {
+//            kotlin.runCatching {
+//                searchNameService.searchName()
+//            }.onSuccess {
+//                if (it.isSuccessful) {
+//                    signUpResult.value = it.body()
+//                    signUpSuccess.value = true
+//                } else {
+//                    signUpSuccess.value = false
+//                }
+//            }.onFailure {
+//                // 에러 처리
+//            }
+//        }
+    }
 
 }
