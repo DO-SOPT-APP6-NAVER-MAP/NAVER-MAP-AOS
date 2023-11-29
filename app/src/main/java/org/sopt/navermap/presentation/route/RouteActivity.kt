@@ -2,8 +2,8 @@ package org.sopt.navermap.presentation.route
 
 import android.os.Bundle
 import android.util.Log
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import org.sopt.navermap.databinding.ActivityRouteBinding
 
@@ -22,7 +22,7 @@ class RouteActivity : AppCompatActivity() {
         // RecyclerView 초기화
         routeAdapter = RouteAdapter(emptyList()) // 초기에 빈 리스트로 설정
         binding.rcRouteImg.layoutManager =
-            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+            LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         binding.rcRouteImg.adapter = routeAdapter
 
         val viewModelFactory = RouteViewModelFactory()
