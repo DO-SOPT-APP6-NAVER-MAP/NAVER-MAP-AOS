@@ -24,6 +24,7 @@ android {
         buildConfigField "String", "NAVER_CLIENT_ID", properties["naver.client.id"]
         buildConfigField "Double", "LOCATION_LATITUDE", properties["location.latitude"]
         buildConfigField "Double", "LOCATION_LONGITUDE", properties["location.longitude"]
+        buildConfigField "String", "BASE_URL", properties["base.url"]
     }
 
     buildTypes {
