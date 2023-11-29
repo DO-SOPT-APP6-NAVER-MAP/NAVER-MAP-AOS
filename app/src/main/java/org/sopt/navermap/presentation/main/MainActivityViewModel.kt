@@ -1,9 +1,12 @@
 package org.sopt.navermap.presentation.main
 
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import org.sopt.navermap.data.model.local.Location
 
 class MainActivityViewModel : ViewModel() {
+    val name: MutableLiveData<String> = MutableLiveData()
+
     val mockLocationList = mutableListOf<Location>(
         Location(
             1, "알고","리즘", "서울 강남구 도산대로49길 8 2층", "31km", "퓨전음식", 12
@@ -49,4 +52,7 @@ class MainActivityViewModel : ViewModel() {
         ),
 
     )
+
+
+
 }

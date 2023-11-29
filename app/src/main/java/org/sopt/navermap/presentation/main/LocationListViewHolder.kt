@@ -9,8 +9,8 @@ class LocationListViewHolder(private val binding: ItemResultListBinding) :
     fun onBind(locationData: Location) {
         binding.tvMainSearchListTitleEntered.text = locationData.nameEntered
         binding.tvMainSearchListTitle.text = locationData.nameRemain
-        binding.tvMainSearchAddress.text = locationData.address
-        binding.tvMainSearchReviewInt.text = locationData.review.toString()
+        binding.tvMainSearchAddress.text = locationData.detailAddress
+        binding.tvMainSearchReviewInt.text = locationData.visitorReview.toString()
         binding.tvMainSearchCategory.text = locationData.category
         binding.tvMainSearchDistance.text = locationData.distance
     }
