@@ -5,13 +5,13 @@ import kotlinx.serialization.Serializable
 import org.sopt.navermap.data.model.local.LocationRaw
 
 @Serializable
-data class ResponseSearchName(
+data class ResponseSearchNameDto(
     @SerialName("statusCode")
     val status: Int,
     @SerialName("message")
     val message: String,
     @SerialName("data")
-    val data: ResponseData,
+    val data: List<ResponseData>,
 ) {
     @Serializable
     data class ResponseData(

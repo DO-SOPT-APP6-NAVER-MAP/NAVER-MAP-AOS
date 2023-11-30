@@ -5,11 +5,12 @@ import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import org.sopt.navermap.BuildConfig
 import org.sopt.navermap.data.service.SearchNameService
 import retrofit2.Retrofit
 
 object ApiFactory {
-    private const val BASE_URL = ""
+    private const val BASE_URL = BuildConfig.BASE_URL
     private val client by lazy {
         OkHttpClient.Builder().addInterceptor(HttpLoggingInterceptor().apply {
             level = HttpLoggingInterceptor.Level.BODY
@@ -26,5 +27,5 @@ object ApiFactory {
 }
 
 object ServicePool {
-val searchNameService = ApiFactory.create<SearchNameService>()
+    val searchNameService = ApiFactory.create<SearchNameService>()
 }
