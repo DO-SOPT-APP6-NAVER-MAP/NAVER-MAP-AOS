@@ -2,7 +2,6 @@ package org.sopt.navermap.presentation.main
 
 import android.os.Bundle
 import android.view.View
-import androidx.fragment.app.viewModels
 import org.sopt.dosopttemplate.util.binding.DataBindingFragment
 import org.sopt.navermap.R
 import org.sopt.navermap.databinding.FragmentMainSearchBinding

@@ -33,16 +33,15 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            }
+
+            override fun afterTextChanged(s: Editable?) {
                 if (s?.isBlank() == true) {
-                    Log.v("text is blank", s.toString())
                     replaceFragment(MainsearchglassFragment())
                 } else {
-                    Log.v("text is not blank", s.toString())
                     replaceFragment(MainsearchFragment())
                 }
             }
-
-            override fun afterTextChanged(s: Editable?) {}
 
         })
     }

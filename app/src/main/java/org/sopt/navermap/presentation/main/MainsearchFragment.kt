@@ -12,26 +12,10 @@ import org.sopt.navermap.presentation.detail.MainActivityViewModelFactory
 class MainsearchFragment :
     DataBindingFragment<FragmentMainSearchBinding>(R.layout.fragment_main_search) {
     private val viewModel: MainActivityViewModel by viewModels { MainActivityViewModelFactory() }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.searchName()
         initSearchNameSuccessObserver()
-    }
-
-    private fun initRecyclerView() {
-        val locationGridAdapter = LocationGridAdapter(requireContext())
-        binding.rvMainSearchGrid.adapter = locationGridAdapter
-        locationGridAdapter.setLocationList(
-            requireNotNull(viewModel.searchNameResultList.value).subList(
-                0,
-                4
-            )
-        )
-
-        val locationListAdapter = LocationListAdapter(requireContext())
-        binding.rvMainSearchList.adapter = locationListAdapter
-        locationListAdapter.setLocationList(requireNotNull(viewModel.searchNameResultList.value))
     }
 
     private fun initSearchNameSuccessObserver() {
@@ -40,5 +24,29 @@ class MainsearchFragment :
                 initRecyclerView()
             }
         }
+    }
+
+
+    private fun initRecyclerView() {
+        initGridAdapter()
+        initListAdapter()
+    }
+
+    private fun initListAdapter() {
+        val locationListAdapter =
+            LocationListAdapter(requireContext(), viewModel.enteredName.value ?: "")
+        binding.rvMainSearchList.adapter = locationListAdapter
+        locationListAdapter.setLocationList(requireNotNull(viewModel.searchNameResultList.value))
+    }
+
+    private fun initGridAdapter() {
+        val locationGridAdapter =
+            LocationGridAdapter(requireContext(), viewModel.enteredName.value ?: "")
+        binding.rvMainSearchGrid.adapter = locationGridAdapter
+        locationGridAdapter.setLocationList(
+            requireNotNull(viewModel.searchNameResultList.value).subList(
+                0, 4
+            )
+        )
     }
 }

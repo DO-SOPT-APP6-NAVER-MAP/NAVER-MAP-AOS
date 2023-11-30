@@ -12,7 +12,9 @@ import org.sopt.navermap.data.repository.SearchNameRepository
 class MainActivityViewModel(
     private val searchNameRepository: SearchNameRepository
 ) : ViewModel() {
-    private val name: MutableLiveData<String> = MutableLiveData()
+    private val _enteredName: MutableLiveData<String> = MutableLiveData()
+    val enteredName: MutableLiveData<String> get() = _enteredName
+
     private val _searchNameResultList = MutableLiveData<List<ResponseSearchNameDto.ResponseData>>()
     val searchNameResultList: MutableLiveData<List<ResponseSearchNameDto.ResponseData>> get() = _searchNameResultList
     private val _searchNameSuccess = MutableLiveData<Boolean>()
@@ -64,6 +66,9 @@ class MainActivityViewModel(
 
         )
 
+    fun setEnteredName(text: String) {
+        _enteredName.value = text
+    }
     fun searchName() {
         viewModelScope.launch {
             searchNameRepository.searchName()
