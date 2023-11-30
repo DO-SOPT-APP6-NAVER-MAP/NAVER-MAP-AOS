@@ -10,12 +10,11 @@ import coil.load
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import org.sopt.dosopttemplate.util.binding.DataBindingActivity
 import org.sopt.navermap.R
-import org.sopt.navermap.data.model.local.SearchResult
 import org.sopt.navermap.databinding.ActivityTestSearchBinding
 import org.sopt.navermap.presentation.detail.DetailActivity
 
 class TestSearchActivity :
-    DataBindingActivity<ActivityTestSearchBinding>(R.layout.activity_test_search){
+    DataBindingActivity<ActivityTestSearchBinding>(R.layout.activity_test_search) {
     private lateinit var behavior: BottomSheetBehavior<LinearLayout>
     private val viewModel: TestSearchViewModel by viewModels { TestSearchViewModelFactory() }
 
@@ -58,6 +57,7 @@ class TestSearchActivity :
                     BottomSheetBehavior.STATE_EXPANDED -> {
                         Log.d("testActivity: ", "bottomSheet 펼치기 ")
                         val intent = Intent(this@TestSearchActivity, DetailActivity::class.java)
+                        intent.putExtra("placeId", 1)
                         intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
                         startActivity(intent)
                     }
@@ -95,6 +95,4 @@ class TestSearchActivity :
             }
         }
     }
-
-
 }
