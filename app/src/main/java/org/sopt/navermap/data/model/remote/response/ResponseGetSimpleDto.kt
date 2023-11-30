@@ -2,6 +2,7 @@ package org.sopt.navermap.data.model.remote.response
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
+import org.sopt.navermap.data.model.local.SearchResult
 
 @Serializable
 data class ResponseGetSimpleDto (
@@ -42,5 +43,26 @@ data class ResponseGetSimpleDto (
             @SerialName("previewImgUrl")
             val previewImgUrl: String
         )
+
+        fun getPreviewImg() = previewImgs.map { data ->
+            SearchResult.Image(
+                previewId = data.previewId,
+                previewImgUrl = data.previewImgUrl
+            )
+        }
     }
+
+    fun getSimpleData() = SearchResult(
+        name = this.data.name,
+        category = this.data.category,
+        description = this.data.description,
+        distance = this.data.distance,
+        address = this.data.address,
+        closeTime = this.data.closeTime,
+        stars = this.data.stars,
+        visitorReview = this.data.visitorReview,
+        blogReview = this.data.blogReview,
+        previewImgs = this.data.getPreviewImg()
+    )
+
 }

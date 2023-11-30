@@ -7,6 +7,6 @@ class SimpleRepository (
 ){
 
     suspend fun getSimple(placeId: Int) = runCatching {
-        simpleService.getSimple(placeId)
+        simpleService.getSimple(placeId).getSimpleData()
     }
 }
