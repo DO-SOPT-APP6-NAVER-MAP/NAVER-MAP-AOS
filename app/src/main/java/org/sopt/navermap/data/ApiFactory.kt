@@ -7,6 +7,7 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.sopt.navermap.BuildConfig
 import org.sopt.navermap.data.service.SearchNameService
+import org.sopt.navermap.data.service.RouteService
 import retrofit2.Retrofit
 
 object ApiFactory {
@@ -28,4 +29,5 @@ object ApiFactory {
 
 object ServicePool {
     val searchNameService = ApiFactory.create<SearchNameService>()
+    val routeService = ApiFactory.create<RouteService>()
 }

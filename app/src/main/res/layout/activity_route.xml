@@ -24,7 +24,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/background_rec_gray"
-            tools:text="출발지" />
+            android:text="@string/strarting_point"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:font="@font/naver_map_pretendard_regular"
+            android:lineSpacingExtra="3sp"
+
+            android:gravity="center_vertical"/>
 
         <TextView
             android:id="@+id/tv_destination"
@@ -32,7 +38,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:background="@drawable/background_rec_gray"
-            tools:text="도착지" />
+            android:text="@string/destination"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:font="@font/naver_map_pretendard_regular"
+            android:lineSpacingExtra="3sp"
+            android:gravity="center_vertical"/>
 
     </LinearLayout>
 
@@ -230,10 +241,12 @@
         android:id="@+id/rc_route_img"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@+id/ll_today_afternoon"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">>
+        app:layout_constraintTop_toBottomOf="@+id/ll_today_afternoon"
+        app:layout_constraintVertical_bias="1.0">>
 
     </androidx.recyclerview.widget.RecyclerView>
 

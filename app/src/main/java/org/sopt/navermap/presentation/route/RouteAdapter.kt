@@ -2,14 +2,14 @@ package org.sopt.navermap.presentation.route
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.ImageView
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import coil.load
-import org.sopt.navermap.data.model.remote.request.RequestRouteImg
+import org.sopt.navermap.data.model.remote.response.DirectionLists
 import org.sopt.navermap.databinding.ItemRouteBinding
 
-class RouteAdapter(private val routeList: List<RequestRouteImg>) :
-    RecyclerView.Adapter<RouteAdapter.RouteViewHolder>() {
+class RouteAdapter(context: List<Any>) : RecyclerView.Adapter<RouteViewHolder>() {
+
+    private var directionLists: List<DirectionLists> = emptyList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RouteViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -18,23 +18,36 @@ class RouteAdapter(private val routeList: List<RequestRouteImg>) :
     }
 
     override fun onBindViewHolder(holder: RouteViewHolder, position: Int) {
-        val requestRouteImg = routeList[position]
-        holder.bind(requestRouteImg)
+        val direction = directionLists[position]
+        holder.bind(direction)
     }
 
     override fun getItemCount(): Int {
-        return routeList.size
+        return directionLists.size
     }
 
-    inner class RouteViewHolder(private val binding: ItemRouteBinding) :
-        RecyclerView.ViewHolder(binding.root) {
+    fun setData(newList: List<DirectionLists>) {
+        val diffResult = DiffUtil.calculateDiff(
+            DirectionListsDiffCallback(
+                directionLists,
+                newList
+            )
+        )
+        directionLists = newList
+        diffResult.dispatchUpdatesTo(this)
+    }
 
-        private val imageView: ImageView = binding.ivRouteToAlgo
 
-        fun bind(item: RequestRouteImg) {
-            imageView.load(item.img_url) {
-                crossfade(true)
-            }
-        }
+    private class DirectionListsDiffCallback(
+        private val oldList: List<DirectionLists>,
+        private val newList: List<DirectionLists>
+    ) : DiffUtil.Callback() {
+        override fun getOldListSize(): Int = oldList.size
+        override fun getNewListSize(): Int = newList.size
+        override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean =
+            oldList[oldItemPosition].directionId == newList[newItemPosition].directionId
+
+        override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean =
+            oldList[oldItemPosition] == newList[newItemPosition]
     }
 }
