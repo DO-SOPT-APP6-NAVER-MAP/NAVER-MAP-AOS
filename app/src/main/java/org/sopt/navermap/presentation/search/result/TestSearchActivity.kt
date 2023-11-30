@@ -6,23 +6,24 @@ import android.util.Log
 import android.view.View
 import android.widget.LinearLayout
 import androidx.activity.viewModels
+import coil.load
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import org.sopt.dosopttemplate.util.binding.DataBindingActivity
 import org.sopt.navermap.R
 import org.sopt.navermap.databinding.ActivityTestSearchBinding
+import org.sopt.navermap.presentation.detail.DetailActivity
 
 class TestSearchActivity :
-    DataBindingActivity<ActivityTestSearchBinding>(R.layout.activity_test_search){
-
+    DataBindingActivity<ActivityTestSearchBinding>(R.layout.activity_test_search) {
     private lateinit var behavior: BottomSheetBehavior<LinearLayout>
-    private val viewModel by viewModels<TestSearchViewModel>()
+    private val viewModel: TestSearchViewModel by viewModels { TestSearchViewModelFactory() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding.viewModel = viewModel
 
         initSearchView()
-
+        initSimpleDataObserver()
     }
 
     private fun initSearchView() {
@@ -41,7 +42,6 @@ class TestSearchActivity :
     }
 
     private fun makeBottomSheet() {
-        getSearchResultData()
         behavior = BottomSheetBehavior.from(binding.bottomSheetSearch)
         behavior.addBottomSheetCallback(object : BottomSheetBehavior.BottomSheetCallback() {
             override fun onSlide(bottomSheet: View, slideOffset: Float) {
@@ -56,7 +56,8 @@ class TestSearchActivity :
 
                     BottomSheetBehavior.STATE_EXPANDED -> {
                         Log.d("testActivity: ", "bottomSheet 펼치기 ")
-                        val intent = Intent(this@TestSearchActivity, TestSearch2Activity::class.java)
+                        val intent = Intent(this@TestSearchActivity, DetailActivity::class.java)
+                        intent.putExtra("placeId", 1)
                         intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
                         startActivity(intent)
                     }
@@ -65,18 +66,21 @@ class TestSearchActivity :
         })
     }
 
-
-    private fun getSearchResultData() {
-        viewModel.mockSearchResult.observe(this) { data ->
+    private fun initSimpleDataObserver() {
+        viewModel.getSimple(1)
+        viewModel.getSimpleData.observe(this) { data ->
             with(binding) {
                 tvSearchName.text = data.name
-                tvSearchAddress.text = data.address
-                tvSearchDistance.text = data.distance
                 tvSearchCategory.text = data.category
                 tvSearchDescription.text = data.description
-                tvSearchVisitorReview.text = "방문자 리뷰 ${data.visitor_review}"
-                tvSearchBlogReview.text = "블로그 리뷰 ${data.blog_review}"
-                tvSearchStars.text = data.stars.toString()
+                tvSearchDistance.text = data.distance
+                tvSearchAddress.text = data.address
+                tvSearchStars.text = data.stars
+                tvSearchVisitorReview.text = "방문자 리뷰 ${data.visitorReview}"
+                tvSearchBlogReview.text = "블로그 리뷰 ${data.blogReview}"
+                ivSearchImage1.load(data.previewImgs[0].previewImgUrl)
+                ivSearchImage2.load(data.previewImgs[1].previewImgUrl)
+                ivSearchImage3.load(data.previewImgs[2].previewImgUrl)
             }
         }
     }
@@ -91,6 +95,4 @@ class TestSearchActivity :
             }
         }
     }
-
-
 }
