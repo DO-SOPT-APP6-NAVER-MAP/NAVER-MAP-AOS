@@ -29,7 +29,6 @@ class MainsearchFragment :
         }
     }
 
-
     private fun initRecyclerView() {
         initGridAdapter()
         initListAdapter()
