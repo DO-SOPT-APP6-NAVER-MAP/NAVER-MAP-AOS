@@ -11,7 +11,7 @@ class RouteActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityRouteBinding
     private lateinit var routeAdapter: RouteAdapter
-    private lateinit var routeViewModel: RouteViewModel
+    private val routeViewModel: RouteViewModel by viewModels { RouteViewModelFactory(this) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,10 +24,6 @@ class RouteActivity : AppCompatActivity() {
         binding.rcRouteImg.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         binding.rcRouteImg.adapter = routeAdapter
-
-        val viewModelFactory = RouteViewModelFactory()
-        routeViewModel = ViewModelProvider(this, viewModelFactory)
-            .get(RouteViewModel::class.java)
 
         routeViewModel.directionLists.observe(this) { directionLists ->
             routeAdapter.setData(directionLists)
