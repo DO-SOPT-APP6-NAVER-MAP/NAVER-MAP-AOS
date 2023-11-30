@@ -22,20 +22,16 @@ class RouteViewModel(private val routeRepository: RouteRepository) : ViewModel()
 
     fun getDirectionLists() {
         viewModelScope.launch {
-            try {
-                val response = withContext(Dispatchers.IO) {
-                    routeRepository.getDirectionLists(1)
-                }
-                response.onSuccess { result ->
-                    _directionLists.value = result.data.directionLists
-                    Log.d("route success", "${result.data}")
-                }
-                response.onFailure { throwable ->
-                    _error.value = throwable.message
-                    Log.d("route fail", "${throwable}")
-                }
-            } catch (e: Exception) {
-                _error.value = e.message
+            val response = withContext(Dispatchers.IO) {
+                routeRepository.getDirectionLists(1)
+            }
+            response.onSuccess { result ->
+                _directionLists.value = result.data.directionLists
+                Log.d("route success", "${result.data}")
+            }
+            response.onFailure { throwable ->
+                _error.value = throwable.message
+                Log.d("route fail", "${throwable}")
             }
         }
     }
