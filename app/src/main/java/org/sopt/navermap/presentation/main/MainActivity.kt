@@ -3,21 +3,23 @@ package org.sopt.navermap.presentation.main
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import org.sopt.dosopttemplate.util.binding.DataBindingFragment
 import org.sopt.navermap.R
 import org.sopt.navermap.databinding.ActivityMainBinding
-import org.sopt.navermap.presentation.detail.MainActivityViewModelFactory
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    private val viewModel: MainActivityViewModel by viewModels { MainActivityViewModelFactory() }
+    private lateinit var viewModel: MainActivityViewModel
+
+    //    by viewModels { MainActivityViewModelFactory() }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        viewModel = ViewModelProvider(this).get(MainActivityViewModel::class.java)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
@@ -39,10 +41,13 @@ class MainActivity : AppCompatActivity() {
                 if (s?.isBlank() == true) {
                     replaceFragment(MainsearchglassFragment())
                 } else {
-                    replaceFragment(MainsearchFragment())
+                    val mainsearchFragment: MainsearchFragment = MainsearchFragment()
+                    val bundle : Bundle = Bundle()
+                    bundle.putString("enteredName",s.toString())
+                    mainsearchFragment.arguments = bundle
+                    replaceFragment(mainsearchFragment)
                 }
             }
-
         })
     }
 
@@ -53,7 +58,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun <T : ViewDataBinding> replaceFragment(fragment: DataBindingFragment<T>) {
+    private fun replaceFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction().replace(R.id.fcv_search_main, fragment).commit()
     }
 }

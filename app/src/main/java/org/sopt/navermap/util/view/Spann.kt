@@ -9,7 +9,9 @@ import androidx.core.content.ContextCompat
 import org.sopt.navermap.R
 
 object Spann {
+
     fun setNameColor(textView: TextView, start: Int, end: Int, context: Context) {
+        if (start >= end) return
         val textData = textView.text
         val builder = SpannableStringBuilder(textData)
         val blue = ContextCompat.getColor(context, R.color.blue)
@@ -21,7 +23,6 @@ object Spann {
 
     fun getStart(objectString: String, baseString: String): Int {
         val minLength = minOf(objectString.length, baseString.length)
-
         for (i in 0 until minLength) {
             if (objectString[0] == baseString[i]) {
                 return i
@@ -33,10 +34,9 @@ object Spann {
 
     fun getEnd(objectString: String, baseString: String): Int {
         val minLength = minOf(objectString.length, baseString.length)
-
         for (i in 0 until minLength) {
-            if (objectString[objectString.length-1] == baseString[i]) {
-                return i
+            if (objectString[objectString.length - 1] == baseString[i]) {
+                return i + 1
             }
         }
         return 0
