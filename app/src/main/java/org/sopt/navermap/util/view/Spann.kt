@@ -17,7 +17,6 @@ object Spann {
         val blue = ContextCompat.getColor(context, R.color.blue)
         val colorBlueSpan = ForegroundColorSpan(blue)
         builder.setSpan(colorBlueSpan, start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-
         textView.text = builder
     }
 

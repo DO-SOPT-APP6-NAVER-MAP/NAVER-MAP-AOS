@@ -41,11 +41,8 @@ class MainActivity : AppCompatActivity() {
                 if (s?.isBlank() == true) {
                     replaceFragment(MainsearchglassFragment())
                 } else {
-                    val mainsearchFragment: MainsearchFragment = MainsearchFragment()
-                    val bundle : Bundle = Bundle()
-                    bundle.putString("enteredName",s.toString())
-                    mainsearchFragment.arguments = bundle
-                    replaceFragment(mainsearchFragment)
+                    viewModel.setEnteredName(s.toString())
+                    replaceFragment(MainsearchFragment())
                 }
             }
         })

@@ -1,7 +1,6 @@
 package org.sopt.navermap.presentation.main
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import org.sopt.dosopttemplate.util.binding.DataBindingFragment
@@ -19,9 +18,7 @@ class MainsearchFragment :
         viewModel = ViewModelProvider(requireActivity()).get(MainActivityViewModel::class.java)
         viewModel.searchName()
         initSearchNameSuccessObserver()
-        enteredName = arguments?.getString("enteredName").toString()
-        Log.v("entered name", enteredName)
-
+        enteredName = viewModel.enteredName.value ?: ""
     }
 
     private fun initSearchNameSuccessObserver() {
@@ -39,15 +36,13 @@ class MainsearchFragment :
     }
 
     private fun initListAdapter() {
-        val locationListAdapter =
-            LocationListAdapter(requireContext(), enteredName)
+        val locationListAdapter = LocationListAdapter(requireContext(), enteredName)
         binding.rvMainSearchList.adapter = locationListAdapter
         locationListAdapter.setLocationList(requireNotNull(viewModel.searchNameResultList.value))
     }
 
     private fun initGridAdapter() {
-        val locationGridAdapter =
-            LocationGridAdapter(requireContext(), enteredName)
+        val locationGridAdapter = LocationGridAdapter(requireContext(), enteredName)
         binding.rvMainSearchGrid.adapter = locationGridAdapter
         locationGridAdapter.setLocationList(
             requireNotNull(viewModel.searchNameResultList.value).subList(

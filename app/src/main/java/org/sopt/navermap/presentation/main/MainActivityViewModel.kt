@@ -22,52 +22,6 @@ class MainActivityViewModel(
     private val _searchNameSuccess = MutableLiveData<Boolean>()
     val searchNameSuccess: MutableLiveData<Boolean> get() = _searchNameSuccess
 
-    val mockLocationList = mutableListOf<Location>(
-        Location(
-            1, "알고", "리즘", "서울 강남구 도산대로49길 8 2층", "31km", "퓨전음식", 12
-        ),
-        Location(
-            2, "알고", "", "서울 강동구 천호대로151길 19 2층", "4.4km", "장난감", 466
-        ),
-        Location(
-            1, "알고", "리즘", "서울 강남구 도산대로49길 8 2층", "31km", "퓨전음식", 12
-        ),
-        Location(
-            2, "알고", "", "서울 강동구 천호대로151길 19 2층", "4.4km", "장난감", 466
-        ),
-        Location(
-            1, "알고", "리즘", "서울 강남구 도산대로49길 8 2층", "31km", "퓨전음식", 12
-        ),
-        Location(
-            2, "알고", "", "서울 강동구 천호대로151길 19 2층", "4.4km", "장난감", 466
-        ),
-        Location(
-            1, "알고", "리즘", "서울 강남구 도산대로49길 8 2층", "31km", "퓨전음식", 12
-        ),
-        Location(
-            2, "알고", "", "서울 강동구 천호대로151길 19 2층", "4.4km", "장난감", 466
-        ),
-        Location(
-            1, "알고", "리즘", "서울 강남구 도산대로49길 8 2층", "31km", "퓨전음식", 12
-        ),
-        Location(
-            2, "알고", "", "서울 강동구 천호대로151길 19 2층", "4.4km", "장난감", 466
-        ),
-        Location(
-            1, "알고", "리즘", "서울 강남구 도산대로49길 8 2층", "31km", "퓨전음식", 12
-        ),
-        Location(
-            2, "알고", "", "서울 강동구 천호대로151길 19 2층", "4.4km", "장난감", 466
-        ),
-        Location(
-            1, "알고", "리즘", "서울 강남구 도산대로49길 8 2층", "31km", "퓨전음식", 12
-        ),
-        Location(
-            2, "알고", "", "서울 강동구 천호대로151길 19 2층", "4.4km", "장난감", 466
-        ),
-
-        )
-
     fun setEnteredName(text: String) {
         _enteredName.value = text
     }
