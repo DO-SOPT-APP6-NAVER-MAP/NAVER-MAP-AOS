@@ -1,102 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context=".presentation.main.MainActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
 
-    <View
-        android:id="@+id/v_search_top_bar"
-        android:layout_width="0dp"
-        android:layout_height="26dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:background="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:elevation="30dp"
-        />
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="org.sopt.navermap.presentation.main.MainActivityViewModel" />
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cl_search_text_bar"
         android:layout_width="match_parent"
-        android:layout_height="59dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        app:layout_constraintTop_toBottomOf="@id/v_search_top_bar"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="match_parent"
         android:background="@color/white"
-        android:elevation="30dp"
-        >
+        tools:context=".presentation.main.MainActivity">
 
 
-        <ImageView
-            android:id="@+id/iv_main_backward_button"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="18dp"
-            android:src="@drawable/ic_main_arrow_left_gray"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-
-            />
-
-        <EditText
-            android:id="@+id/et_main_search_box"
+        <View
+            android:id="@+id/v_search_top_bar"
             android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:background="@drawable/img_main_activity_frame"
-            android:clipToOutline="true"
-            android:cursorVisible="true"
-            android:paddingStart="12dp"
-            android:paddingTop="12dp"
-            android:paddingEnd="10dp"
-            android:paddingBottom="10dp"
-            app:layout_constraintEnd_toStartOf="@id/iv_main_close_button"
-            app:layout_constraintStart_toEndOf="@id/iv_main_backward_button"
+            android:layout_height="26dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@color/white"
+            android:elevation="30dp"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/iv_main_close_button"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginTop="18dp"
-            android:layout_marginEnd="16dp"
-            android:src="@drawable/ic_main_remove_gray"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_search_text_bar"
+            android:layout_width="match_parent"
+            android:layout_height="59dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@color/white"
+            android:elevation="30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/v_search_top_bar">
+
+
+            <ImageView
+                android:id="@+id/iv_main_backward_button"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="18dp"
+                android:src="@drawable/ic_main_arrow_left_gray"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+
+                />
+
+            <EditText
+                android:id="@+id/et_main_search_box"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/img_main_activity_frame"
+                android:clipToOutline="true"
+                android:cursorVisible="true"
+                android:paddingStart="12dp"
+                android:paddingTop="12dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="10dp"
+                app:layout_constraintEnd_toStartOf="@id/iv_main_close_button"
+                app:layout_constraintStart_toEndOf="@id/iv_main_backward_button"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_main_close_button"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_main_remove_gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fcv_search_main"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/cl_search_text_bar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-
             />
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-    <ImageView
-        android:id="@+id/iv_main_search_glass"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_marginTop="235dp"
-        android:src="@drawable/ic_main_search_gray"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cl_search_text_bar" />
-
-    <TextView
-        android:id="@+id/tv_main_search_instructor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/main_search_instructor"
-        android:textAppearance="@style/Typography.NaverMap.Title2"
-        android:textColor="@color/gray_4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/iv_main_search_glass" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
