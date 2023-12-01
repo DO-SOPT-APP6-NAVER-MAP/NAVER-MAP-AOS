@@ -8,20 +8,20 @@ data class Dummy(
 
 
 data class LocationRaw(
-    val id: Int,
+    val placeId: Int,
     val name: String,
-    val address: String,
+    val detailAddress: String,
     val distance: String,
     val category: String,
-    val review: Int
+    val visitorReview: Int
 )
 
 data class Location(
-    val id: Int,
+    val placeId: Int,
     val nameEntered: String,
     val nameRemain: String,
-    val address: String,
+    val detailAddress: String,
     val distance: String,
     val category: String,
-    val review: Int
+    val visitorReview: Int
 )
