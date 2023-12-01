@@ -25,6 +25,10 @@ data class ResponseGetSimpleDto (
         val distance: String,
         @SerialName("address")
         val address: String,
+        @SerialName("rodeNameAddress")
+        val rodeNameAddress: String,
+        @SerialName("localAddress")
+        val localAddress: String,
         @SerialName("closeTime")
         val closeTime: String,
         @SerialName("stars")
