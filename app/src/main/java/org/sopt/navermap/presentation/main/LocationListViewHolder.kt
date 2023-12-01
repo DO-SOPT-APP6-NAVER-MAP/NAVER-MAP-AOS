@@ -11,6 +11,7 @@ import org.sopt.navermap.util.view.Spann.setNameColor
 class LocationListViewHolder(
     private val binding: ItemResultListBinding,
     private val context: Context,
+    private val onClicked: (ResponseSearchNameDto.ResponseData) -> Unit,
     private val enteredName: String
 ) :
     RecyclerView.ViewHolder(binding.root) {
@@ -26,5 +27,8 @@ class LocationListViewHolder(
             getEnd(enteredName, locationData.name),
             context
         )
+        binding.root.setOnClickListener {
+            onClicked(locationData)
+        }
     }
 }

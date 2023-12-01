@@ -2,6 +2,7 @@ package org.sopt.navermap.presentation.main
 
 import android.os.Bundle
 import android.view.View
+import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import org.sopt.dosopttemplate.util.binding.DataBindingFragment
@@ -36,9 +37,19 @@ class MainsearchFragment :
     }
 
     private fun initListAdapter() {
-        val locationListAdapter = LocationListAdapter(requireContext(), enteredName)
+        val locationListAdapter = LocationListAdapter(requireContext(), enteredName, onClicked = { recyclerViewItemClickHandler() })
         binding.rvMainSearchList.adapter = locationListAdapter
         locationListAdapter.setLocationList(requireNotNull(viewModel.searchNameResultList.value))
+    }
+
+    private fun recyclerViewItemClickHandler() {
+        val currentFragment = parentFragmentManager.findFragmentById(R.id.fcv_search_main)
+        if(currentFragment != null){
+            val parentActivity = activity as? MainActivity
+            parentActivity?.clear()
+            parentFragmentManager.beginTransaction().remove(currentFragment).commit()
+            parentFragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
+        }
     }
 
     private fun initGridAdapter() {
