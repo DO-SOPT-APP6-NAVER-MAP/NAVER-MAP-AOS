@@ -4,6 +4,11 @@
 
 # 🎬 시연영상
 
+
+https://github.com/DO-SOPT-APP6-NAVER-MAP/NAVER-MAP-AOS/assets/113014331/4eb79ab8-322e-43c6-ba66-28f8698d7cfa
+
+화면 끊기는건 에뮬이슈,, ㅎ
+
 # 👨‍👩‍👧‍👦 Members
 |<img src="https://avatars.githubusercontent.com/u/113014331?v=4" width="128" />|<img src="https://avatars.githubusercontent.com/u/84266681?v=4" width="128" />|<img src="https://avatars.githubusercontent.com/u/128988935?v=4" width="128" />|<img src="https://avatars.githubusercontent.com/u/107169027?v=4" width="128" />| 
 |:---------:|:---------:|:---------:|:---------:|
